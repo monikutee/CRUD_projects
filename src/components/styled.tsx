@@ -27,7 +27,7 @@ export const StyledTableCell = styled(TableCell)(() => ({
   [`&.${tableCellClasses.head}`]: {
     backgroundColor: "#ffcaec6e",
     color: "#FF65C9",
-    "&:last-child": {
+    "&:nth-last-of-type(2)": {
       color: "#101ec7",
     },
   },

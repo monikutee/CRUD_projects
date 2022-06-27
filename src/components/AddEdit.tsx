@@ -29,6 +29,9 @@ const StyledFormComponent = styled("form")`
   width: 100%;
 `;
 
+type Keys = (keyof Project)[];
+const ProjectKeys: Keys = ["title", "type", "state", "loan", "interest"];
+
 export const AddEdit: React.FC = () => {
   const {
     register,
@@ -72,15 +75,7 @@ export const AddEdit: React.FC = () => {
 
   React.useEffect(() => {
     if (selected) {
-      type Keys = (keyof Project)[];
-      const fields = [
-        "title",
-        "type",
-        "state",
-        "loan",
-        "interest",
-      ] as unknown as Keys;
-      fields.forEach((field) => setValue(field, selected[field]));
+      ProjectKeys.forEach((key) => setValue(key, selected[key]));
     }
   }, [setValue, selected]);
 
