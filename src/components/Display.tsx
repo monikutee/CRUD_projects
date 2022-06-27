@@ -7,6 +7,7 @@ import {
   StyledCircularProgress,
   StyledCalculationsField,
   StyledDisplayBox,
+  BoxInCircle,
 } from "./styled";
 import Link from "@mui/material/Link";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -108,23 +109,12 @@ export const Display: React.FC = () => {
               size={100}
               thickness={3}
             />
-            <Box
-              sx={{
-                top: 0,
-                left: 0,
-                bottom: 0,
-                right: 0,
-                position: "absolute",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+            <BoxInCircle>
               <Box style={{ display: "flex", flexDirection: "column" }}>
                 <Text variant="caption">{`66%`}</Text>
                 <Text variant="caption">22 people</Text>
               </Box>
-            </Box>
+            </BoxInCircle>
           </Box>
           <StyledCalculationsField>
             <Box>

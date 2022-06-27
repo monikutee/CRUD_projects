@@ -5,8 +5,8 @@ export function addProject(project: Project): void {
   localStorage.setItem("projects", JSON.stringify([...projects, project]));
 }
 
-export function getProjects() {
-  return localStorage.getItem("projects") || "[]";
+export function getProjects(): Project[] {
+  return JSON.parse(localStorage.getItem("projects") || "[]");
 }
 
 export function updateProjects(projects: Project[]): void {

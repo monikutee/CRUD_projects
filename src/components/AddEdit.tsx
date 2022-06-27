@@ -85,22 +85,22 @@ export const AddEdit: React.FC = () => {
       <StyledFormComponent onSubmit={handleSubmit(onSubmit)}>
         <TextField
           label="Title"
+          required
           {...register("title", { required: true, validate: titleExists })}
         />
-        {errors.title && errors.title.type === "required" && (
-          <span>This field is required</span>
-        )}
         {errors.title && errors.title.type === "validate" && (
           <span>Project with this title already exists</span>
         )}
-
-        <TextField label="Type" {...register("type", { required: true })} />
-        {errors.type && <span>This field is required</span>}
-
+        <TextField
+          required
+          label="Type"
+          {...register("type", { required: true })}
+        />
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-helper-label">State</InputLabel>
           <Select
             label="State"
+            required
             sx={{ textAlign: "left" }}
             defaultValue={selected?.state || "-"}
             {...register("state", { required: true })}
@@ -113,10 +113,10 @@ export const AddEdit: React.FC = () => {
             <MenuItem value="Analyzed">Analyzed</MenuItem>
           </Select>
         </FormControl>
-        {errors.state && <span>This field is required</span>}
 
         <TextField
           fullWidth
+          required
           label="Loan"
           {...register("loan", { required: true })}
           type="number"
@@ -134,8 +134,8 @@ export const AddEdit: React.FC = () => {
             ),
           }}
         />
-        {errors.loan && <span>This field is required</span>}
         <TextField
+          required
           label="Interest"
           {...register("interest", { required: true })}
           type="number"
@@ -153,9 +153,6 @@ export const AddEdit: React.FC = () => {
             ),
           }}
         />
-
-        {errors.interest && <span>This field is required</span>}
-
         <StyledButtonBox>
           <Link href="/" underline="none">
             <StyledSimpleButton variant="contained">Cancel</StyledSimpleButton>

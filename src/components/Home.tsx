@@ -23,6 +23,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
+const TABLE_FIELDS = ["Title", "Type", "State", "Loan", "Interest", "Action"];
 export const Home: React.FC = () => {
   const { projects, setProjects, setSelected } = React.useContext(Context);
   const navigate = useNavigate();
@@ -63,12 +64,9 @@ export const Home: React.FC = () => {
         <Table sx={{ minWidth: 700 }}>
           <TableHead>
             <TableRow>
-              <StyledTableCell>Title</StyledTableCell>
-              <StyledTableCell>Type</StyledTableCell>
-              <StyledTableCell>State</StyledTableCell>
-              <StyledTableCell>Loan</StyledTableCell>
-              <StyledTableCell>Interest</StyledTableCell>
-              <StyledTableCell>Action</StyledTableCell>
+              {TABLE_FIELDS.map((field) => (
+                <StyledTableCell>{field}</StyledTableCell>
+              ))}
             </TableRow>
           </TableHead>
           <TableBody>

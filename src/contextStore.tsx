@@ -36,7 +36,7 @@ export const ContextProvider: React.FC<ContexProps> = ({
 
   React.useEffect(() => {
     if (!projects.length) {
-      setProjects(JSON.parse(getProjects()));
+      setProjects(getProjects());
     }
   }, [setProjects, projects.length]);
 
