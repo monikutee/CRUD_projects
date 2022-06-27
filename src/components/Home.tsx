@@ -47,13 +47,18 @@ export const Home: React.FC = () => {
     navigate("/display");
   };
 
+  const handleAddProject = () => {
+    setSelected(null);
+    navigate("/add");
+  };
+
   return (
     <StyledRoot>
       <StyledHeaderBox>
         <Text variant="h6">Projects</Text>
-        <Link href="/add" underline="none">
-          <StyledMainButton variant="contained">Create new</StyledMainButton>
-        </Link>
+        <StyledMainButton variant="contained" onClick={handleAddProject}>
+          Create new
+        </StyledMainButton>
       </StyledHeaderBox>
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 700 }}>
