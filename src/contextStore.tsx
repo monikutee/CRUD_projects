@@ -30,7 +30,7 @@ export const ContextProvider: React.FC<ContexProps> = ({
   initialProjects,
 }) => {
   const [selected, setSelected] = React.useState<Project | null>(
-    JSON.parse(localStorage.getItem("selectedProject") || "") || null
+    JSON.parse(localStorage.getItem("selectedProject") || "null")
   );
   const [projects, setProjects] = React.useState<Project[]>(initialProjects);
 
